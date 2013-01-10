@@ -2,7 +2,7 @@ Description
 ===========
 
 Installs Codership's MySQL Galera cluster
-(http://http://www.codership.com/). Galera Cluster provides synchronous
+(http://www.codership.com/). Galera Cluster provides synchronous
 multi-master replication for MySQL (replication plugin).
 
 * No master failover scripting (automatic failover and recovery)
@@ -13,26 +13,28 @@ multi-master replication for MySQL (replication plugin).
 * This cookbook enables you to install a Galera cluster from scratch. At
 minimum you would probaly only need to change a few attributes like:
 
-  ['mysql']['root_password'] = "password"
-  ['mysql']['innodb']['buffer_pool_size'] = "256M"
+    ['mysql']['root_password'] = "password"
+    ['mysql']['innodb']['buffer_pool_size'] = "256M"
 
 You can also deploy our ClusterControl coookbook with the Galera Cluster
 which provide additional control and monitoring features.
 
-Howto: Chef, MySQL Galera and ClusterControl
+Howto: Chef, MySQL Galera and ClusterControl:
+
 http://support.severalnines.com/entries/21453521-opscode-s-chef-mysql-galera-and-clustercontrol
 
 Requirements
 ============
 
-Platform
---------
-Debian, Ubuntu
-CentOS, Red Hat, Fedora
-Tested on:
+Platforms
+---------
+* Debian, Ubuntu
+* CentOS, Red Hat, Fedora
 
-Ubuntu 12.04 w/ Chef-server 10.16.2 and Galera Cluster v2.2
-Ubuntu 11.10/12.04 w/ Chef-solo 0.10.8/0.10.10 and Galera Cluster v2.1
+#### Tested on:
+
+* Ubuntu 12.04 w/ Chef-server 10.16.2 and Galera Cluster v2.2
+* Ubuntu 11.10/12.04 w/ Chef-solo 0.10.8/0.10.10 and Galera Cluster v2.1
 
 Attributes
 ==========
@@ -120,22 +122,22 @@ Data Bags
        "update_wsrep_urls": "no"
     }
 
-**init_node** This is the node that initializes the cluster and which
+**init_node** - This is the node that initializes the cluster and which
 the rest of the joining nodes should connect to initially join the
 cluster.
 
-**galera_nodes** These are the IP addresses where you have MySQL Galera
+**galera_nodes** - These are the IP addresses where you have MySQL Galera
 nodes running and are used to set the wsrep_urls in the my.cnf file.
 
-**ssl_method** State Snapshot Transfer method, 'mysqldump', 'rsync', or
+**ssl_method** - State Snapshot Transfer method, 'mysqldump', 'rsync', or
 'rsync_wan'.
 
 Change History
 ==============
 
-v0.3 - Add init_node which specifies the initial donor node.
-v0.2 - Use wsrep_urls with mysqld_safe.
-v0.1 - Initial recipe based upon MySQL Galera 5.5.23.
+* v0.3 - Add init_node which specifies the initial donor node.
+* v0.2 - Use wsrep_urls with mysqld_safe.
+* v0.1 - Initial recipe based upon MySQL Galera 5.5.23.
 
 
 License and Author
