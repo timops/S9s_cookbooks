@@ -13,8 +13,8 @@ multi-master replication for MySQL (replication plugin).
 * This cookbook enables you to install a Galera cluster from scratch. At
 minimum you would probaly only need to change a few attributes like:
 
-    ['mysql']['root_password'] = "password"
-    ['mysql']['innodb']['buffer_pool_size'] = "256M"
+`['mysql']['root_password'] = "password"`
+`['mysql']['innodb']['buffer_pool_size'] = "256M"`
 
 You can also deploy our ClusterControl coookbook with the Galera Cluster
 which provide additional control and monitoring features.
