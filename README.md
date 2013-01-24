@@ -91,13 +91,17 @@ Usage
 
 On MySQL Galera Nodes:
 
-    include_recipe "galera:server"
+```ruby
+include_recipe "galera:server"
+```
 
 Example cc_galera role:
 
-    name "cc_galera"
-    description "MySQL Galera Node"
-    run_list "recipe[galera::server]"
+```ruby
+name "cc_galera"
+description "MySQL Galera Node"
+run_list "recipe[galera::server]"
+```
 
 Data Bags
 =========
