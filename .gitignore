@@ -1,2 +1,11 @@
-.rake_test_cache
-
+.vagrant
+Berksfile.lock
+Gemfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+persuse-validator.pem
